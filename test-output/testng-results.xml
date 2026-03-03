@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-03T15:54:58 IST" name="Default suite" finished-at="2026-03-03T15:55:06 IST" duration-ms="8079">
+  <suite started-at="2026-03-03T19:45:08 IST" name="Default suite" finished-at="2026-03-03T19:45:22 IST" duration-ms="13382">
     <groups>
     </groups>
-    <test started-at="2026-03-03T15:54:58 IST" name="Default test" finished-at="2026-03-03T15:55:06 IST" duration-ms="8079">
-      <class name="com.amazon.amazon_project.Amazon">
-        <test-method signature="openTest()[pri:0, instance:com.amazon.amazon_project.Amazon@5158b42f]" started-at="2026-03-03T15:54:58 IST" name="openTest" finished-at="2026-03-03T15:55:06 IST" duration-ms="8024" status="PASS">
+    <test started-at="2026-03-03T19:45:08 IST" name="Default test" finished-at="2026-03-03T19:45:22 IST" duration-ms="13382">
+      <class name="com.amazon.amazon_project.AmazonTest">
+        <test-method signature="openTest()[pri:0, instance:com.amazon.amazon_project.AmazonTest@5158b42f]" started-at="2026-03-03T19:45:08 IST" name="openTest" finished-at="2026-03-03T19:45:22 IST" duration-ms="13328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTest -->
-      </class> <!-- com.amazon.amazon_project.Amazon -->
+      </class> <!-- com.amazon.amazon_project.AmazonTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
