@@ -16,6 +16,7 @@ public class AmazonTest {
             Thread.sleep(3000);
 	        System.out.println("Title: " + driver.getTitle());
 	        driver.navigate().to("https://mail.google.com/");
+	        driver.navigate().back();
 
 	        driver.quit();
 	    }
