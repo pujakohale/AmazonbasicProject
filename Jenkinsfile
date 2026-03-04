@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    parameters{
+		choice(name: 'browser' , choices: ['Chrome', 'Edge'], description:'Select browser')
+	}
 
     tools {
         maven 'Maven3'
@@ -12,6 +16,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/puja293/amazonproject.git'
             }
         }
+        stage('Parallel Tests'){
+			parallel{
+				stage('Chrome Test'){
+					steps{
+						bat 'mvn test'
+					}
+					stage('Edge Test'){
+					steps{
+						bat 'mvn test'
+					}
+				}
+			}
+		}
 
         stage('Build') {
             steps {
@@ -21,7 +38,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat "mvn test -Dbrowser=${params.browser}"
             }
         }
 
