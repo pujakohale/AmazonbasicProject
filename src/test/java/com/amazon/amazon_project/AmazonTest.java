@@ -28,6 +28,9 @@ public class AmazonTest {
 	        driver = new ChromeDriver(options);
 	    }
 	    else if(browser.equalsIgnoreCase("edge")) {
+	    	  System.setProperty("webdriver.edge.driver", 
+	    		        "C:\\Program Files\\msedgedriver.exe");
+
 	    	EdgeOptions options = new EdgeOptions();
 	        options.addArguments("--headless=new");
 	        driver = new EdgeDriver(options);
