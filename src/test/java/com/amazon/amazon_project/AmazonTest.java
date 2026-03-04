@@ -29,7 +29,7 @@ public class AmazonTest {
 
         } else if (browser.equalsIgnoreCase("edge")) {
             // Edge setup
-            System.setProperty("webdriver.edge.driver", "C:\\drivers\\msedgedriver.exe"); // Set path manually
+            System.setProperty("webdriver.edge.driver", "C:\\Program Files\\msedgedriver.exe"); // Set path manually
             EdgeOptions options = new EdgeOptions();
             // Remove headless if Edge crashes in Jenkins
             // options.addArguments("--headless=new"); 
