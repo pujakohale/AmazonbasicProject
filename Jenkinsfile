@@ -23,6 +23,7 @@ pipeline {
 					steps{
 						bat "mvn test -Dbrowser=chrome"
 					}
+					}
 					stage('Edge Test'){
 					steps{
 						bat "mvn test -Dbrowser=edge"
