@@ -16,6 +16,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/puja293/amazonproject.git'
             }
         }
+        }
         stage('Parallel Tests'){
 			parallel{
 				stage('Chrome Test'){
