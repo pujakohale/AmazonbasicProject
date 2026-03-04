@@ -21,11 +21,11 @@ pipeline {
 			parallel{
 				stage('Chrome Test'){
 					steps{
-						bat 'mvn test'
+						bat "mvn test -Dbrowser=chrome"
 					}
 					stage('Edge Test'){
 					steps{
-						bat 'mvn test'
+						bat "mvn test -Dbrowser=edge"
 					}
 				}
 			}
