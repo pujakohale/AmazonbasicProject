@@ -2,6 +2,7 @@ package com.amazon.amazon_project;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 
@@ -9,8 +10,9 @@ public class AmazonTest {
 
 	    @Test
 	    public void openTest() throws InterruptedException {
-
-	        WebDriver driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");	   
+            WebDriver driver = new ChromeDriver(options);
 	        driver.get("https://www.amazon.com/");
             driver.manage().window().maximize();
             Thread.sleep(3000);
