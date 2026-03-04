@@ -7,46 +7,48 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.Test;
 
-
 public class AmazonTest {
-	
-	
-	@Test
-	public void openTest() throws InterruptedException {
 
-	    String browser = System.getProperty("browser");
-	    if(browser == null || browser.isEmpty())
-	    {
-	    	browser = "chrome";
-	    }
+    @Test
+    public void openTest() throws InterruptedException {
 
-	    WebDriver driver = null;
+        String browser = System.getProperty("browser");
+        if (browser == null || browser.isEmpty()) {
+            browser = "chrome";  // default to Chrome
+        }
 
-	    if(browser.equalsIgnoreCase("chrome")) {
-	        ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--headless=new");
-	        driver = new ChromeDriver(options);
-	    }
-	    else if(browser.equalsIgnoreCase("edge")) {
-	    	  System.setProperty("webdriver.edge.driver", 
-	    		        "C:\\Program Files\\msedgedriver.exe");
+        WebDriver driver = null;
 
-	    	EdgeOptions options = new EdgeOptions();
-	        //options.addArguments("--headless=new");
-	        driver = new EdgeDriver(options);
-	    }
-	   
-	    driver.get("https://www.amazon.com/");
-	    driver.manage().window().maximize();
-	    Thread.sleep(3000);
+        if (browser.equalsIgnoreCase("chrome")) {
+            // Chrome setup
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");  // Headless for Jenkins
+            options.addArguments("--disable-gpu");   // Recommended in headless
+            options.addArguments("--remote-allow-origins=*"); // Avoid errors with newer Chrome
+            driver = new ChromeDriver(options);
 
-	    System.out.println("Title: " + driver.getTitle());
+        } else if (browser.equalsIgnoreCase("edge")) {
+            // Edge setup
+            System.setProperty("webdriver.edge.driver", "C:\\drivers\\msedgedriver.exe"); // Set path manually
+            EdgeOptions options = new EdgeOptions();
+            // Remove headless if Edge crashes in Jenkins
+            // options.addArguments("--headless=new"); 
+            options.addArguments("--disable-gpu");
+            options.addArguments("--remote-allow-origins=*");
+            driver = new EdgeDriver(options);
+        }
 
-	    driver.navigate().to("https://mail.google.com/");
-	    driver.navigate().back();
+        // Open Amazon
+        driver.get("https://www.amazon.com/");
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
 
-	    driver.quit();
-	}
+        System.out.println("Title: " + driver.getTitle());
 
+        // Navigate to Gmail and back
+        driver.navigate().to("https://mail.google.com/");
+        driver.navigate().back();
+
+        driver.quit();
+    }
 }
-
