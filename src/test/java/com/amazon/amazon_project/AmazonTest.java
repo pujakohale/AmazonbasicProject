@@ -32,7 +32,7 @@ public class AmazonTest {
 	    		        "C:\\Program Files\\msedgedriver.exe");
 
 	    	EdgeOptions options = new EdgeOptions();
-	        options.addArguments("--headless=new");
+	        //options.addArguments("--headless=new");
 	        driver = new EdgeDriver(options);
 	    }
 	   
