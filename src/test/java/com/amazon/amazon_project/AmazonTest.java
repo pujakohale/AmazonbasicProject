@@ -19,7 +19,7 @@ public class AmazonTest {
 
         WebDriver driver = null;
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome1")) {
             // Chrome setup
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless=new");  // Headless for Jenkins
@@ -27,16 +27,15 @@ public class AmazonTest {
             options.addArguments("--remote-allow-origins=*"); // Avoid errors with newer Chrome
             driver = new ChromeDriver(options);
 
-        } else if (browser.equalsIgnoreCase("edge")) {
-            // Edge setup
-            System.setProperty("webdriver.edge.driver", "C:\\Users\\pujak\\Downloads\\edgedriver_win64\\msedgedriver.exe"); // Set path manually
-            EdgeOptions options = new EdgeOptions();
-            // Remove headless if Edge crashes in Jenkins
-            // options.addArguments("--headless=new"); 
-            options.addArguments("--disable-gpu");
-            options.addArguments("--remote-allow-origins=*");
-            driver = new EdgeDriver(options);
-        }
+        } else if (browser.equalsIgnoreCase("chrome2")) {
+            // Chrome setup
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");  // Headless for Jenkins
+            options.addArguments("--disable-gpu");   // Recommended in headless
+            options.addArguments("--remote-allow-origins=*"); // Avoid errors with newer Chrome
+            driver = new ChromeDriver(options);
+
+   
 
         // Open Amazon
         driver.get("https://www.amazon.com/");
@@ -51,4 +50,5 @@ public class AmazonTest {
 
         driver.quit();
     }
+}
 }
