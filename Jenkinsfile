@@ -19,12 +19,12 @@ pipeline {
 
         stage('Parallel Tests') {
             parallel {
-                stage('Chrome Test') {
+                stage('Chrome1 Test') {
                     steps {
                         bat 'mvn test -Dbrowser=chrome'
                     }
                 }
-                stage('Edge Test') {
+                stage('Chrome2 Test') {
                     steps {
                         bat 'mvn test -Dbrowser=edge'
                     }
