@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-04T20:34:49 IST" name="Surefire suite" finished-at="2026-03-04T20:34:59 IST" duration-ms="10252">
+  <suite started-at="2026-03-05T11:40:13 IST" name="Surefire suite" finished-at="2026-03-05T11:40:29 IST" duration-ms="15701">
     <groups>
     </groups>
-    <test started-at="2026-03-04T20:34:49 IST" name="Surefire test" finished-at="2026-03-04T20:34:59 IST" duration-ms="10252">
+    <test started-at="2026-03-05T11:40:13 IST" name="Surefire test" finished-at="2026-03-05T11:40:29 IST" duration-ms="15701">
       <class name="com.amazon.amazon_project.AmazonTest">
-        <test-method signature="openTest()[pri:0, instance:com.amazon.amazon_project.AmazonTest@13acb0d1]" started-at="2026-03-04T20:34:49 IST" name="openTest" finished-at="2026-03-04T20:34:59 IST" duration-ms="10206" status="PASS">
+        <test-method signature="openTest()[pri:0, instance:com.amazon.amazon_project.AmazonTest@13acb0d1]" started-at="2026-03-05T11:40:14 IST" name="openTest" finished-at="2026-03-05T11:40:29 IST" duration-ms="15637" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTest -->

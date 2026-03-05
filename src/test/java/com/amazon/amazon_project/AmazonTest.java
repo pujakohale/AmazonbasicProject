@@ -14,7 +14,7 @@ public class AmazonTest {
 
         String browser = System.getProperty("browser");
         if (browser == null || browser.isEmpty()) {
-            browser = "chrome";  // default to Chrome
+            browser = "chrome1";  // default to Chrome
         }
 
         WebDriver driver = null;
