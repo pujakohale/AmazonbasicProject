@@ -35,7 +35,7 @@ public class AmazonTest {
             options.addArguments("--remote-allow-origins=*"); // Avoid errors with newer Chrome
             driver = new ChromeDriver(options);
 
-   
+        }
 
         // Open Amazon
         driver.get("https://www.amazon.com/");
@@ -50,5 +50,4 @@ public class AmazonTest {
 
         driver.quit();
     }
-}
 }
